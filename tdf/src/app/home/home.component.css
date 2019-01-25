@@ -1,0 +1,39 @@
+.container-feature{
+    height: 800px;
+    padding-top: 20px;
+    
+    
+}
+
+
+/* .container{
+    background-color: white;
+    padding-left: 0;
+    padding-right: 0;
+} */
+
+body{
+    background-color: whitesmoke;
+    padding-top: 56px;
+}
+
+
+.text1 {
+    position: absolute;
+    bottom: 286px;
+    left:200px;
+    color: #a3a3a3;
+  }
+
+  .text2 {
+    position: absolute;
+    bottom: 240px;
+    left: 200px;
+    color: #a3a3a3;
+  }
+
+  .log-btn {
+    position: absolute;
+    bottom: 150px;
+    left: 200px;
+  }
