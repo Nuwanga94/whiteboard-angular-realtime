@@ -2,7 +2,7 @@
 
 (function() {
 
-  var socket = io('http://192.168.8.100:3500/');
+  var socket = io('http://192.168.8.25:3500/');
   var canvas = document.getElementsByClassName('whiteboard')[0];
   var colors = document.getElementsByClassName('color');
   var context = canvas.getContext('2d');

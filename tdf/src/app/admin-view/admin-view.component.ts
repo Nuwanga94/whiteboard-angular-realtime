@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {EnrollmentService} from './enrollment.service';
 import {admin} from './view-model'
-
+import {User} from './user'
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-admin-view',
@@ -12,11 +13,19 @@ import {admin} from './view-model'
 
 export class AdminViewComponent implements OnInit {
 
-  constructor(private enroll:EnrollmentService) { }
+  constructor(private enroll:EnrollmentService,private router:Router,private route:ActivatedRoute) { }
   errorMsg= '';
   view:admin[];
+  id;
+  newUser:User
+  admin:admin;
+  type;
 
   ngOnInit() {
+    this.id=this.route.snapshot.paramMap.get('id');
+    this.type=this.route.snapshot.paramMap.get('type');
+   // this.id=this.route.snapshot.paramMap.get('id');
+
     this.enroll.getData()
     .subscribe(
       (resp:admin[]) => {
@@ -34,6 +43,13 @@ export class AdminViewComponent implements OnInit {
       }
     )
   }
+
+onsubmit(id:string){
+  this.router.navigate(['adminv','viewprof',id])
+ 
+}
+
   }
+
 
 

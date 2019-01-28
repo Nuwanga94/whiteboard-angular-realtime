@@ -5,6 +5,9 @@ import {ActivatedRoute} from '@angular/router';
 import {EnrollmentService} from './enrollment.service'
 import {User} from './user'
 import {user} from './userModel'
+import {ad} from './ad-model';
+import {th} from './th-model';
+import {st} from './st-model';
 
 
 //import { user } from 'src/app/login/userModel';
@@ -18,12 +21,29 @@ id;type;
 selectedFile= null;
 newUser:User;
 user:user;
+isAdmin;
+isTeacher;
+isStudent;
   constructor(private route:ActivatedRoute,private getAdmin:EnrollmentService) { }
   url="http://rakcollege.agiuae.com/wp-content/uploads/2015/07/gent-300x300.png";
   ngOnInit() {
     this.id=this.route.snapshot.paramMap.get('id');
     this.type=this.route.snapshot.paramMap.get('type');
+if(this.type=="admin"){
+  this.isAdmin=true;
+}else if(this.type=="teacher"){
+  this.isTeacher=true;
+}else{
+  this.isStudent=true;
+}
+    console.log(this.type);
     this.newUser= new User(this.id,this.type);
+     this.getAdmin.getAdmin(this.newUser).
+      subscribe((data:user)=>{
+        this.user=data;
+        console.log(this.user);
+        
+      });
 
     
 
@@ -49,11 +69,9 @@ user:user;
       // Handle any errors
     });
 
-    this.getAdmin.getAdmin(this.newUser).
-      subscribe((data:user)=>{
-        this.user=data;
-        
-      });
+     
+   
+   
   }
 
 

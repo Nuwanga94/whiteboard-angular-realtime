@@ -3,7 +3,7 @@
 
 .box1{
     padding-top: 100px;
-    padding-left: 5px;
+    padding-left: 35px;
     width: 260px;
     background-color: rgb(255, 255, 255)
 }
@@ -14,4 +14,21 @@
 
 name{
     width: 260px;
+}
+
+.box{
+   
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    padding-right: 100px;
+    max-width: 72%;
+    padding-top: 200px;
+   
+    border-left-color: black;
+}   
+
+
+.view-user{
+    width: 80%;
+    padding-top: 100px;
 }

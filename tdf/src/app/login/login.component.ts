@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {EnrollmentService} from './enrollment.service';
 import {user} from './userModel';
-import {User} from './user'
+import {ad} from './ad-model';
+import {th} from './th-model';
+import {st} from './st-model';
 import {Router,ActivatedRoute} from '@angular/router'
 
 @Component({
@@ -16,7 +18,9 @@ export class LoginComponent implements OnInit {
 
 
   errorMsg= '';
-  user:User;
+admin:ad;
+teacher:th;
+student:st;
   type;
   id;
 
@@ -28,31 +32,58 @@ newUser=new user('','','');
 
   onSubmit(){
     this.type=this.newUser.type;
-    this.enroll.enroll(this.newUser)
+    if(this.type=='admin'){
+      this.enroll.enroll(this.newUser)
     .subscribe(              //come response via service from backend 
-      (data:User)=> {
-                  this.user=data;
-                  console.log(this.user.aId);
-                  this.id=this.user.aId;
-                  if(this.type=='admin'){
-                    this.router.navigate(['admin',this.id,'ppic']);
-                  }else if(this.type=='student'){
-                    this.router.navigate(['student',this.id,'ppic']);
-                  }else if(this.type=='teacher'){
-                    this.router.navigate(['teacher',this.id,'ppic']);
+      (data:ad)=> {
+                  this.admin=data;
+                  this.id=this.admin.aId;
+                  this.router.navigate(['admin',this.id,'ppic']);
 
-                  }
-                  //window.location.href = "admin"; 
         
       },
-
-      
       error=> {
         this.errorMsg = error.statusText;
         console.log('Error!', this.errorMsg);
         alert("Wrong Credentials!");
       }
     )
+    }else if(this.type=='student'){
+
+      this.enroll.enroll(this.newUser)
+    .subscribe(              //come response via service from backend 
+      (data:st)=> {
+                  this.student=data;
+                  this.id=this.student.sId;
+                  this.router.navigate(['student',this.id,'ppic']);
+
+        
+      },
+      error=> {
+        this.errorMsg = error.statusText;
+        console.log('Error!', this.errorMsg);
+        alert("Wrong Credentials!");
+      }
+    )
+      
+    }else if(this.type=='teacher'){ 
+      this.enroll.enroll(this.newUser)
+      .subscribe(              //come response via service from backend 
+        (data:th)=> {
+                    this.teacher=data;
+                    this.id=this.teacher.tId;
+                    this.router.navigate(['teacher',this.id,'ppic']);
+  
+          
+        },
+        error=> {
+          this.errorMsg = error.statusText;
+          console.log('Error!', this.errorMsg);
+          alert("Wrong Credentials!");
+        }
+      )
+    }
+    
   }
 
 }

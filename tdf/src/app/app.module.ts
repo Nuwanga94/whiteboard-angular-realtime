@@ -31,6 +31,18 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { ScreenComponent } from './screen/screen.component';
 import { StudentViewComponent } from './student-view/student-view.component';
 import { TeacherViewComponent } from './teacher-view/teacher-view.component';
+import { EditComponent } from './edit/edit.component';
+import { DeleteComponent } from './delete/delete.component';
+import { TeditComponent } from './tedit/tedit.component';
+import { SeditComponent } from './sedit/sedit.component';
+import { SdeleteComponent } from './sdelete/sdelete.component';
+import { TdeleteComponent } from './tdelete/tdelete.component';
+import { ViewprofComponent } from './viewprof/viewprof.component';
+import { SprofComponent } from './sprof/sprof.component';
+import { TprofComponent } from './tprof/tprof.component';
+import { EditprofaComponent } from './editprofa/editprofa.component';
+import { EditprofsComponent } from './editprofs/editprofs.component';
+import { EditproftComponent } from './editproft/editproft.component';
 
 
 
@@ -41,7 +53,7 @@ const appRoutes: Routes = [
   { path: 'admin/:id/ppic/register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin/:id', component: AdminComponent },
-  { path: 'teacher', component: TeacherComponent },
+  { path: 'teacher/:id', component: TeacherComponent },
   { path: 'student/:id', component: StudentComponent },
   { path: 'superUser', component: SuperUserComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -62,7 +74,20 @@ const appRoutes: Routes = [
   // { path: ':type/:id/ppic', component: PpicComponent },
   { path: 'screen', component: ScreenComponent },
   { path: 'studentv', component: StudentViewComponent },
-  { path: 'teacherv', component: TeacherViewComponent }
+  { path: 'teacherv', component: TeacherViewComponent },
+  { path: 'aedit', component: EditComponent },
+  { path: 'adelete', component: DeleteComponent },
+  { path: 'tedit', component: TeditComponent },
+  { path: 'sedit', component: SeditComponent },
+  { path: 'sdelete', component: SdeleteComponent },
+  { path: 'tdelete', component: TdeleteComponent },
+  { path: 'adminv/viewprof/:vid', component: ViewprofComponent },
+  { path: 'studentv/sprof/:vid', component: SprofComponent },
+  { path: 'teacherv/tprof/:vid', component: TprofComponent },
+  { path: 'edit/editprofa/:vid', component: EditprofaComponent },
+  { path: 'sedit/editprofs/:vid', component: EditprofsComponent },
+  { path: 'tedit/editproft/:vid', component: EditproftComponent }
+  
   
   
 
@@ -95,7 +120,19 @@ const appRoutes: Routes = [
     PpicComponent,
     ScreenComponent,
     StudentViewComponent,
-    TeacherViewComponent
+    TeacherViewComponent,
+    EditComponent,
+    DeleteComponent,
+    TeditComponent,
+    SeditComponent,
+    SdeleteComponent,
+    TdeleteComponent,
+    ViewprofComponent,
+    SprofComponent,
+    TprofComponent,
+    EditprofaComponent,
+    EditprofsComponent,
+    EditproftComponent
   ],
 
   

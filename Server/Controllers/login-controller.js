@@ -10,31 +10,36 @@ exports.login = function login(req, res){
     var type = post.type;
     var EmailId= post.email;
     var Password= post.pw;
-
+console.log(Password);
     res.setHeader('Content-Type', 'application/json');
 
     if(type=='admin'){
-        var sql="SELECT  aId FROM `admin1` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'";    
+       
+        var sql="SELECT  aId FROM `admin` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'"; 
+        console.log("admin sql"+sql)
+   
    
     }
     else if(type=='student'){
-        var sql="SELECT  sId FROM `student1` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'";    
+        var sql="SELECT  sId FROM `student` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'";    
    
     }else if(type=='teacher'){
-        var sql="SELECT  tId FROM `teacher1` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'";    
+        var sql="SELECT  tId FROM `teacher` WHERE  `email`='"+EmailId+"' and pw = '"+Password+"'";    
    
     }
 
-    console.log(sql);   
+    console.log("this is sql:"+sql);   
     
     
     var query = connection.query(sql, function(err, result) {
+        console.log("result"+result);
         if(result.length){
             // req.session.userId = result[0].id;
             // req.session.user = result[0];
              
            res.status(200);
             res.json(result[0]);
+            console.log(result[0]);
            // res.send(JSON.stringify({ user: result.length }));
             
          }

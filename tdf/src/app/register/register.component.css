@@ -3,13 +3,8 @@ input.ng-invalid.ng-dirty{
     box-shadow: 1px 1px 1px 1px red;
 }
 
-/* .container{
-    width: 1000px;
-    text-align: left;
-    box-align: center;
-} */
 
-body{
+/* body{
     background-color: grey;
 }
 
@@ -41,4 +36,31 @@ body{
 
 .bottomsec{
     padding-left: 10%;
+} */
+
+
+.panelbox{
+   width: 70%;
+   padding-left: 100px;
+   
 }
+
+
+.box1{
+    padding-top: 100px;
+    padding-left: 35px;
+    width: 260px;
+    background-color: rgb(255, 255, 255)
+}
+
+
+
+.box{
+   
+    height: 1200px;
+    background-color: rgb(255, 255, 255);
+    padding-right: 100px;
+    max-width: 72%;
+   
+    border-left-color: black;
+}   

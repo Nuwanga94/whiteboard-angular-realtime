@@ -29,17 +29,28 @@
   
   .colors {
     position: fixed;
+    
   }
   
   .color {
     display: inline-block;
     height: 48px;
     width: 48px;
+   
   }
   
   .color.black { background-color: black; }
-  .color.red { background-color: red; }
-  .color.green { background-color: green; }
+  .color.purple { background-color: purple; }
   .color.blue { background-color: blue; }
-  .color.yellow { background-color: yellow; }
   
+  .color.green { background-color: green; }
+  .color.red { background-color: red; }
+  .color.orange { background-color: orange; }
+  .color.yellow { background-color: yellow; }
+  .color.white { background-color: white; }
+  
+  .color.pink { background-color: pink; }
+  .color.brown { background-color: brown; }
+  
+
+ 

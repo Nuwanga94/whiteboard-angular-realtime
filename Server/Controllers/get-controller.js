@@ -15,7 +15,7 @@ exports.profile = function profile(req, res){
     //    return;
     // }
  
-    var sql="SELECT * FROM `admin1`";          
+    var sql="SELECT * FROM `admin`";          
     connection.query(sql, function(err, result){  
         res.json(result);
 
@@ -36,7 +36,7 @@ exports.profile = function profile(req, res){
     //    return;
     // }
  
-    var sql="SELECT * FROM `teacher1`";          
+    var sql="SELECT * FROM `teacher`";          
     connection.query(sql, function(err, result){  
         res.json(result);
 
@@ -53,7 +53,7 @@ exports.profile = function profile(req, res){
     //    return;
     // }
  
-    var sql="SELECT * FROM `student1`";          
+    var sql="SELECT * FROM `student`";          
     connection.query(sql, function(err, result){  
         res.json(result);
 
@@ -84,11 +84,58 @@ exports.profile = function profile(req, res){
     res.setHeader('Content-Type', 'application/json');
 
     if(type=='admin'){
-        var sql="SELECT  fName,lName FROM `admin1` WHERE  `aId`='"+Id+"'";  
+        var sql="SELECT fName,mName,lName,email,addr1,addr2,addr3,phone FROM `admin` WHERE  `aId`='"+Id+"'";  
     }else if(type=='student'){
-        var sql="SELECT  fName,lName FROM `student1` WHERE  `sId`='"+Id+"'";  
+        var sql="SELECT  fName,mName,lName,email,addr1,addr2,addr3,phone FROM `student` WHERE  `sId`='"+Id+"'";  
     }else if(type=='teacher'){
-        var sql="SELECT  fName,lName FROM `teacher1` WHERE  `tId`='"+Id+"'";  
+        var sql="SELECT  fName,mName,lName,email,addr1,addr2,addr3,phone FROM `teacher` WHERE  `tId`='"+Id+"'";  
+    }
+
+
+ 
+    
+    var query = connection.query(sql, function(err, result) {
+        if(result.length){
+            // req.session.userId = result[0].id;
+            // req.session.user = result[0];
+             
+           res.status(200);
+            res.json(result[0]);
+           // res.send(JSON.stringify({ user: result.length }));
+            
+         }
+         else{
+            console.log("not found user");
+            res.status(404);
+            res.json({user: null});
+            //res.send(JSON.stringify({ a: 1 }));
+         }
+                 
+      });
+   } else {
+    res.status(400).end();
+    // res.send(JSON.stringify({ a: 1 }));
+    //   res.render(' http://localhost:4200',{message: message});
+   }
+}
+
+
+exports.prof = function login(req, res){
+
+    if(req.method == "POST"){
+    var post  = req.body;
+    var Id= post.id;
+    var type=post.type;
+   
+
+    res.setHeader('Content-Type', 'application/json');
+
+    if(type=='admin'){
+        var sql="SELECT  fName, lName FROM `admin` WHERE  `aId`='"+Id+"'";  
+    }else if(type=='student'){
+        var sql="SELECT  fName, lName FROM `student` WHERE  `sId`='"+Id+"'";  
+    }else if(type=='teacher'){
+        var sql="SELECT fName, lName FROM `teacher` WHERE  `tId`='"+Id+"'";  
     }
 
 

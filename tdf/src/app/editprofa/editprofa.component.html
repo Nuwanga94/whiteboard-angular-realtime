@@ -1,0 +1,261 @@
+<!-- <body>
+  <app-navbar></app-navbar>
+  
+  <div class="row">
+  
+          <div class="box1 col-sm-3">
+          <app-sidebar></app-sidebar>
+          </div>
+      
+      
+  <div class="box col-sm-9 shadow-none p-3 mb-5 bg-light rounded">
+        
+  
+  
+          <div class="list-group">
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action list-group-item-danger">
+                          Admin ID</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action  list-group-item-danger">
+                                  {{admin.aId}}</button>
+                  </div>
+                  </div>
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action ">First Name</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action ">{{admin.fName}}</button>
+                  </div>
+                 
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Middle Name</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.mName}}</button>
+                  </div>
+  
+  
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Last Name</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.lName}}</button>
+                  </div>
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Email</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.email}}</button>
+                  </div>
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Address Line1</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.addr1}}</button>
+                  </div>
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Address Line2</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.addr2}}</button>
+                  </div>
+  
+  
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Address Line3</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.addr3}}</button>
+                  </div>
+  
+                  <div class="row">
+                  <button type="button" class="list-group-item col-sm-5 list-group-item-action">Phone</button>
+                  <button type="button" class="list-group-item col-sm-7 list-group-item-action">{{admin.phone}}</button>
+                  </div>
+  
+  
+  
+  
+  </div>
+  
+  
+  
+  </div>
+  
+  <app-foot></app-foot>
+  </body>
+
+ -->
+
+
+
+
+
+
+
+<body>
+        <app-navbar></app-navbar>
+        
+        <div class="row">
+        
+                <div class="box1 col-sm-3">
+                <app-sidebar></app-sidebar>
+                </div>
+            
+            
+        <div class="box col-sm-9 shadow-none p-3 mb-5 bg-light rounded">
+              
+          
+    
+    
+    
+              
+                <!-- <div id="loginbox" style="margin-top:100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                   -->
+                     <div class="panel panel-info" >
+         
+                         <div class="panelbox">
+         
+                             <div class="panel-heading">
+                                 <div class="panel-title"><h3>Registration</h3></div>
+                                 <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>-->
+                             </div>    
+          
+                             <div style="padding-top:30px" class="panel-body" >
+             
+         
+         
+         
+                                 <form #userForm= "ngForm"  *ngIf="!submitted" (ngSubmit)="onSubmit(userForm)" novalidate>
+         
+         
+                                    
+                                         
+                                         <div class="form-group">
+                                           <label>First Name</label>
+                                           <input class="t1" type="text" required #FirstName="ngModel"
+                                            class="form-control" 
+                                           name="FirstName" [(ngModel)]= "admin.fName" ngModel required>
+                                          
+                                         </div>
+                                     
+                                         <div class="form-group">
+                                           <label>Middle Name</label>
+                                           <input type="text"  #MidName="ngModel"
+                                           class="form-control" 
+                                           name="MidName" [(ngModel)]= "admin.mName" ngModel required>
+                                         
+                                         </div>
+         
+         
+                                         <div class="form-group">
+                                             <label>Last Name</label>
+                                             <input type="text"  #LastName="ngModel"
+                                             class="form-control" 
+                                             name="LastName" [(ngModel)]= "admin.lName" ngModel required>
+                                           
+                                           </div>
+                                     
+                                     
+                                     
+                                     
+                                     
+                                         <div class="form-group">
+                                             <label>Email</label>
+                                             <input type="text"  required class="form-control" name="EmailId" [(ngModel)]= "admin.email" ngModel required [pattern]="emailPattern" >
+                                         </div>
+                                     
+                                     
+                                     
+                                        
+                                     
+         
+                                          
+                                    
+         
+         
+                                         <div class="form-group">
+                                             <label>Address Line1</label>
+                                             <input type="text"  #No="ngModel"
+                                             class="form-control" 
+                                             name="No" [(ngModel)]= "admin.addr1" ngModel required>
+                                           
+                                           </div>
+         
+                                           <div class="form-group">
+                                             <label>Address Line2</label>
+                                             <input type="text"  #Street="ngModel"
+                                             class="form-control" 
+                                             name="Street" [(ngModel)]= "admin.addr2" ngModel required>
+                                           
+                                           </div>
+         
+         
+                                           <div class="form-group">
+                                             <label>Address Line3</label>
+                                             <input type="text"  #City="ngModel"
+                                             class="form-control" 
+                                             name="City" [(ngModel)]= "admin.addr3" ngModel required>
+                                           
+                                           </div>
+         
+         
+         
+         
+                                         <div class="form-group">
+                                             <label>Phone</label>
+                                             <input type="tel" #ContactNo="ngModel" pattern="^\d{10}$" 
+                                              class="form-control" name="ContactNo" [(ngModel)]= "admin.phone" >
+                                              
+                                           
+                                           </div>
+                                       
+                                   
+                                     
+                                     
+                                     
+                                     
+                                             <div class="bottomsec">
+                                     
+                                           <!-- <div class="form-check mb-3">
+                                             <input class="form-check-input" required name="subscribe" [(ngModel)]= "userModel.subscribe" type="checkbox" ngModel required>
+                                             <label class="form-check-label">
+                                               Agree to #board's Terms and Conditions
+                                             </label>
+                                           </div> -->
+                                     
+                                     
+                                     
+                                     
+                                           <button  class="btn btn-success" type="submit"  >Submit form</button>
+                                     
+                                           <!-- <div class="form-group">
+                                               <div class="col-md-12 control">
+                                                  
+                                                       Do you have an account!
+                                                   <a href="/login">
+                                                       Sign In Here
+                                                   </a>
+                                                   
+                                               </div>
+                                           </div>    -->
+         
+         
+                                         </div>
+         
+                                       </form>
+         
+         
+         
+         
+          
+          
+                                                   
+                             </div> 
+                <!-- </div>-->
+             </div>
+             </div>
+        
+        
+        
+        
+        </div>
+        
+        
+        
+        </div>
+        
+        <app-foot></app-foot>
+        </body>

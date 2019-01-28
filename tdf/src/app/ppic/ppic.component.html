@@ -1,8 +1,12 @@
 
 <body>
-    <div class="container-fluid">
-    <div class="box1">
+        <app-navbar></app-navbar>
 
+    <div class="container-fluid">
+    <div class="row">
+
+    <div class="box1 col-sm-3">
+           
         <div class="pic">
         <img src={{url}} alt="..." height="250px" width="250px" class="img-thumbnail"><br>
         <input type="file" value="upload" id="fileButton" (change)="onFileSelected($event)" />
@@ -11,11 +15,75 @@
         <div class="name">
         <h4> {{user.fName}} {{user.lName}}</h4>
         </div>
-      
+
+
+
+        <div *ngIf="isAdmin">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div  *ngIf="isStudent">
+            <app-sidebar-student></app-sidebar-student>
+        </div>
+        <div  *ngIf="isTeacher">
+            <app-sidebar-teacher></app-sidebar-teacher>
+        </div>
 
     </div>
       
+
+    <div class="box col-sm-9 shadow-none p-3 mb-5 bg-light rounded">
+
+
+        <div class="view-user">
+  <!-- <div class="name">
+        <h4> {{user.fName}} {{user.fName}}</h4>
+        </div>
+
+        <div class="name">
+            <h4> {{user.fName}} {{user.mName}}</h4>
+            </div>
+            <div class="name">
+                <h4> {{user.fName}} {{user.lName}}</h4>
+                </div>
+                <div class="name">
+                    <h4> {{user.fName}} {{user.email}}</h4>
+                    </div> <div class="name">
+                        <h4> {{user.fName}} {{user.phone}}</h4>
+                        </div>
+                    </div> <div class="name">
+                        <h4> {{user.fName}} {{user.phone}}</h4>
+                        </div>
+                    </div> <div class="name">
+                        <h4> {{user.fName}} {{user.phone}}</h4>
+                        </div>
+                    </div> <div class="name">
+                        <h4> {{user.fName}} {{user.phone}}</h4>
+                        </div>
+
+                    </div> -->
+
+
+                    <ul class="list-group">
+                        <li class="list-group-item">First Name: {{user.fName}}</li>
+                        <li class="list-group-item">Middle Name: {{user.mName}}</li>
+                        <li class="list-group-item">Last Name: {{user.lName}}</li>
+                        <li class="list-group-item">Email {{user.email}}</li>
+                        <li class="list-group-item">Phone: {{user.phone}}</li>
+                        <li class="list-group-item">Address Line1: {{user.addr1}}</li>
+                        <li class="list-group-item">Address Line2: {{user.addr2}}</li>
+                        <li class="list-group-item">Address Line3: {{user.addr3}}</li>
+                      </ul>
+
+
+</div>
+
     </div>
-      <app-admin></app-admin>
-    
+
+</div>
+</div>
+      <!-- <app-admin></app-admin> -->
+      <app-foot></app-foot>
 </body>
+
+
+

@@ -7,8 +7,8 @@
 .bar {
     width: 260px; /* Set a width if you like */
     
-    height: 100%;
-    background-color: white;
+    height: 60%;
+    background-color: rgb(240, 240, 240);
     padding-top: 30px;
     
   }
@@ -21,7 +21,7 @@
   }
   
   .vertical-menu a {
-    background-color:white; /* Grey background color */
+    background-color:rgb(240, 240, 240); /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
     padding: 12px; /* Add some padding */
@@ -44,7 +44,7 @@
 
 
   .vertical-menu-view a {
-    background-color: rgb(241, 237, 237); /* Grey background color */
+    background-color: rgb(255, 255, 255); /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
     padding: 12px; /* Add some padding */
@@ -55,7 +55,7 @@
   }
   
   .vertical-menu-view a:hover {
-    background-color: rgb(199, 199, 199); /* Dark grey background on mouse-over */
+    background-color: rgb(193, 193, 193); /* Dark grey background on mouse-over */
   }
   
   .vertical-menu-view a.active {

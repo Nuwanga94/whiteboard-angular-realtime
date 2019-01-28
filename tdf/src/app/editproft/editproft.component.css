@@ -1,0 +1,24 @@
+
+.box1{
+    padding-top: 100px;
+    padding-left: 35px;
+    width: 260px;
+    background-color: rgb(255, 255, 255)
+}
+
+
+
+.box{
+   
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    padding-right: 100px;
+    max-width: 72%;
+   
+    border-left-color: black;
+}   
+
+
+.list-group{
+    padding-top: 100px;
+}

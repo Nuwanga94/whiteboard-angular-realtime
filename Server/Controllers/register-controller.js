@@ -38,15 +38,15 @@ exports.signup = function signup(req, res){
       
  
       if(type=='admin'){
-        var sql = "INSERT INTO `admin1`(`aId`,`fName`,`mName`,`lName`,`email`,`pw`,`rpw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + RePassword + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
+        var sql = "INSERT INTO `admin`(`aId`,`fName`,`mName`,`lName`,`email`,`pw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
  
       }
       else if(type=='student'){
-        var sql = "INSERT INTO `student1`(`sId`,`fName`,`mName`,`lName`,`email`,`pw`,`rpw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + RePassword + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
+        var sql = "INSERT INTO `student`(`sId`,`fName`,`mName`,`lName`,`email`,`pw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
  
       }
       else if(type=='teacher'){
-        var sql = "INSERT INTO `teacher1`(`tId`,`fName`,`mName`,`lName`,`email`,`pw`,`rpw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + RePassword + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
+        var sql = "INSERT INTO `teacher`(`tId`,`fName`,`mName`,`lName`,`email`,`pw`, `addr1`,`addr2`,`addr3`,`phone`) VALUES ('" + aId + "','" + FirstName + "','" + MidName + "','" + LastName + "','" + EmailId + "','" + Password + "','" + No + "','" + Street + "','" + City + "','" + ContactNo + "')";
  
       }
         
