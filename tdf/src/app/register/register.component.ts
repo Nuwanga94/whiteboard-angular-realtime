@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit{
 //    e = document.getElementById("ddlViewBy");
 // strUser = this.e.options[this.e.selectedIndex].value;
 id;
-userModel= new User( '','','','' ,  '' , '', '', '','','','','y' );
+userModel= new User( '','','','' ,  '' , '', '', '','','','','' );
 //user= new User('default', '','','' ,  '' , '', '', false);
 constructor(private _enrollmentService: EnrollmentService,private router:Router,private route:ActivatedRoute){}
 

@@ -26,7 +26,12 @@ isTeacher;
 isStudent;
   constructor(private route:ActivatedRoute,private getAdmin:EnrollmentService) { }
   url="http://rakcollege.agiuae.com/wp-content/uploads/2015/07/gent-300x300.png";
+ 
+ 
+ 
   ngOnInit() {
+
+    
     this.id=this.route.snapshot.paramMap.get('id');
     this.type=this.route.snapshot.paramMap.get('type');
 if(this.type=="admin"){

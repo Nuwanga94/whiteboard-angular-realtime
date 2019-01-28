@@ -20,10 +20,10 @@ import {delet} from './delete'
 export class EditService {
 
 
-  _url = 'http://localhost:3000/edit';
-  st_url='http://localhost:3000/editst'
-  th_url = 'http://localhost:3000/editth';
-  delet='http://localhost:3000/delete';
+  _url = 'http://192.168.8.110:3000/edit';
+  st_url='http://192.168.8.110:3000/editst'
+  th_url = 'http://192.168.8.110:3000/editth';
+  delet='http://192.168.8.110:3000/delete';
   constructor(private _http: HttpClient) { }
 
 

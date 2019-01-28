@@ -43,6 +43,9 @@ import { TprofComponent } from './tprof/tprof.component';
 import { EditprofaComponent } from './editprofa/editprofa.component';
 import { EditprofsComponent } from './editprofs/editprofs.component';
 import { EditproftComponent } from './editproft/editproft.component';
+import { DocupComponent } from './docup/docup.component';
+import { DocdownComponent } from './docdown/docdown.component';
+import { DocdetailComponent } from './docdetail/docdetail.component';
 
 
 
@@ -86,7 +89,12 @@ const appRoutes: Routes = [
   { path: 'teacherv/tprof/:vid', component: TprofComponent },
   { path: 'edit/editprofa/:vid', component: EditprofaComponent },
   { path: 'sedit/editprofs/:vid', component: EditprofsComponent },
-  { path: 'tedit/editproft/:vid', component: EditproftComponent }
+  { path: 'tedit/editproft/:vid', component: EditproftComponent },
+  { path: 'docup', component: DocupComponent },
+  { path: 'docdown', component: DocdownComponent },
+  { path: 'docdetail', component: DocdetailComponent }
+  
+  
   
   
   
@@ -132,7 +140,10 @@ const appRoutes: Routes = [
     TprofComponent,
     EditprofaComponent,
     EditprofsComponent,
-    EditproftComponent
+    EditproftComponent,
+    DocupComponent,
+    DocdownComponent,
+    DocdetailComponent
   ],
 
   

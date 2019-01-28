@@ -11,9 +11,9 @@ import { throwError } from 'rxjs';
 export class EnrollmentService {
 
 
-  _url = 'http://localhost:3000/viewAdmin';
-  get_url='http://localhost:3000/'
-  prof_url='http://localhost:3000/viewprof'
+  _url = 'http://192.168.8.110:3000/viewAdmin';
+  get_url='http://192.168.8.110:3000/'
+  prof_url='http://192.168.8.110:3000/viewprof'
   constructor(private _http: HttpClient) { }
 
   getAdmin(user:User) {

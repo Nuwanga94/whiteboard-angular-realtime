@@ -10,8 +10,8 @@ import { throwError } from 'rxjs';
 export class EnrollmentService {
 
 
-  _url = 'http://localhost:3000/enroll';
-  get_url='http://localhost:3000/'
+  _url = 'http://192.168.8.110:3000/enroll';
+  get_url='http://192.168.8.110:3000/'
   constructor(private _http: HttpClient) { }
 
   enroll(user: User) {
