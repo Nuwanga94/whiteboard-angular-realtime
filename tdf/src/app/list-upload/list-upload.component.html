@@ -1,0 +1,46 @@
+
+
+
+<body>
+  <app-navbar></app-navbar>
+  
+  <div class="row">
+  
+          <div class="box1 col-sm-3">
+          <app-sidebar></app-sidebar>
+          </div>
+      
+      
+  <div class="box col-sm-9 shadow-none p-3 mb-5 bg-light rounded">
+        
+
+    <div class="ab">
+    
+      <h3>Show Uploaded Files</h3>
+      <br>
+      <br>
+    <button class="button btn btn-info" *ngIf='showFile' (click)='showFiles(false)'>Hide Files</button>
+ 
+    <button class="button btn btn-info" *ngIf='!showFile' (click)='showFiles(true)'>Show Files</button>
+     
+    <div [hidden]="!showFile">
+      <div class="panel panel-primary">
+        <div class="panel-heading">List of Files</div>
+        <div *ngFor="let file of fileUploads | async">
+          <div class="panel-body">
+            <app-details-upload [fileUpload]='file'></app-details-upload>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+    
+        
+ </div>
+  
+  
+  </div>
+  
+  <app-foot></app-foot>
+  </body>

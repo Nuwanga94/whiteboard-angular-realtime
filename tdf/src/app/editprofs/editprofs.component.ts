@@ -38,7 +38,7 @@ export class EditprofsComponent implements OnInit {
 
     this.edit.editst(this.user).//edit.edit kiyna thnq
     subscribe(res=>{
-      this.router.navigate(['sedit']);
+      window.location.reload();
     });
   }
 

@@ -6,6 +6,11 @@ import {ad} from './ad-model';
 import {th} from './th-model';
 import {st} from './st-model';
 import {Router,ActivatedRoute} from '@angular/router'
+import { myFirstParticle } from '../../assets/particlejs-config'
+import * as particlesJS from 'particlesjs';
+
+
+declare var particlesJS: any;
 
 @Component({
   selector: 'app-login',
@@ -13,6 +18,10 @@ import {Router,ActivatedRoute} from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  myStyle: object = {};
+  myParams: object = {};
+  width: number = 100;
+  height: number = 100;
 
   constructor(private enroll:EnrollmentService,private router:Router) { }
 
@@ -26,6 +35,10 @@ student:st;
 
 newUser=new user('','','');
   ngOnInit() {
+
+particlesJS('particles-js', myFirstParticle, function() {
+  console.log('callback - particles.js config loaded');
+});
     
   }
 

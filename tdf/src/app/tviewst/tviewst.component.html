@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head> -->
+<body>
+    <app-navbar></app-navbar>
+    <!-- <app-navbar></app-navbar> -->
+
+    <div class="row">
+
+        <div class="box1 col-sm-3">
+        <app-sidebar-teacher></app-sidebar-teacher>
+        </div>
+    
+    
+  <div class="box col-sm-9 shadow-none p-3 mb-5 bg-light rounded">
+      
+  <h2>Registered Students</h2>
+  <p></p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <th>ID</th>
+        <th>first Name</th>
+        <!-- <th>Middle Name</th> -->
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of view">
+        <td>{{admin.sId}}</td>
+        <td>{{admin.fName}}</td>
+        <!-- <td>{{admin.mName}}</td> -->
+        <td>{{admin.lName}}</td>
+        <td>{{admin.email}}</td>
+        <td>{{admin.phone}}</td>
+        <td>
+          <form class="btn btn-info"  (ngSubmit)="onsubmit(admin.sId)" #formone="ngForm">
+            <button type="submit" class="btn btn-info">View</button>
+           </form>
+          </td> 
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+
+<app-foot></app-foot>
+</body>
+</html>

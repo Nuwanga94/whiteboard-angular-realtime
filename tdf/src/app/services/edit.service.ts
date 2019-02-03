@@ -43,11 +43,11 @@ export class EditService {
 
   }
   editst(data:user) {
-    return this._http.put<any>(this._url,data); 
+    return this._http.put<any>(this.st_url,data); 
 
   }
   editth(data:user) {
-    return this._http.put<any>(this._url,data); 
+    return this._http.put<any>(this.th_url,data); 
 
   }
   deleteu(data:delet) {

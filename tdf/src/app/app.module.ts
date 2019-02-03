@@ -46,6 +46,15 @@ import { EditproftComponent } from './editproft/editproft.component';
 import { DocupComponent } from './docup/docup.component';
 import { DocdownComponent } from './docdown/docdown.component';
 import { DocdetailComponent } from './docdetail/docdetail.component';
+import { ParticlesModule } from 'angular-particle';
+import * as particlesJS from 'particlesjs';
+import { AuthComponent } from './auth/auth.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
+import { ListUploadComponent } from './list-upload/list-upload.component';
+import { DetailsUploadComponent } from './details-upload/details-upload.component';
+import { FormUploadComponent } from './form-upload/form-upload.component';
+import { TviewstComponent } from './tviewst/tviewst.component';
+import { SproffComponent } from './sproff/sproff.component';
 
 
 
@@ -92,8 +101,12 @@ const appRoutes: Routes = [
   { path: 'tedit/editproft/:vid', component: EditproftComponent },
   { path: 'docup', component: DocupComponent },
   { path: 'docdown', component: DocdownComponent },
-  { path: 'docdetail', component: DocdetailComponent }
-  
+  { path: 'docdetail', component: DocdetailComponent },
+  { path: 'viewFiles', component: ListUploadComponent  },
+  { path: 'fileDetails', component:DetailsUploadComponent },
+  { path: 'uploadFiles', component: FormUploadComponent  },
+  { path: 'tviewst', component: TviewstComponent  },
+  { path: 'tviewst/sproff/:vid', component: SproffComponent  }
   
   
   
@@ -143,7 +156,14 @@ const appRoutes: Routes = [
     EditproftComponent,
     DocupComponent,
     DocdownComponent,
-    DocdetailComponent
+    DocdetailComponent,
+    AuthComponent,
+    UploadFileComponent,
+    ListUploadComponent,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    TviewstComponent,
+    SproffComponent
   ],
 
   
@@ -153,7 +173,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

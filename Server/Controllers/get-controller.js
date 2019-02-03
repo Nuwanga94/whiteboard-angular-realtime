@@ -84,11 +84,11 @@ exports.profile = function profile(req, res){
     res.setHeader('Content-Type', 'application/json');
 
     if(type=='admin'){
-        var sql="SELECT fName,mName,lName,email,addr1,addr2,addr3,phone FROM `admin` WHERE  `aId`='"+Id+"'";  
+        var sql="SELECT fName,mName,lName,email,pw,addr1,addr2,addr3,phone FROM `admin` WHERE  `aId`='"+Id+"'";  
     }else if(type=='student'){
-        var sql="SELECT  fName,mName,lName,email,addr1,addr2,addr3,phone FROM `student` WHERE  `sId`='"+Id+"'";  
+        var sql="SELECT  fName,mName,lName,email,pw,addr1,addr2,addr3,phone FROM `student` WHERE  `sId`='"+Id+"'";  
     }else if(type=='teacher'){
-        var sql="SELECT  fName,mName,lName,email,addr1,addr2,addr3,phone FROM `teacher` WHERE  `tId`='"+Id+"'";  
+        var sql="SELECT  fName,mName,lName,email,pw,addr1,addr2,addr3,phone FROM `teacher` WHERE  `tId`='"+Id+"'";  
     }
 
 

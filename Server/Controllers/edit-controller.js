@@ -19,10 +19,10 @@ exports.edit = function signup(req, res){
       No=post.addr1;
       Street=post.addr2;
       City=post.addr3;
-      ContactNo=post.addr3;
+      ContactNo=post.phone;
       id=post.id;
       Password=post.pw
-
+console.log(id);
 
         var sql = "UPDATE `admin` SET `fName`='" + FirstName + "' ,`mName`='" + MidName + "' ,`lName`= '" + LastName + "',`email`='" + EmailId + "' ,`pw`='" + Password + "' , `addr1`= '" + No + "',`addr2`= '" + Street + "',`addr3`='" + City + "' ,`phone`= '" + ContactNo + "'  WHERE `aId`= '" + id + "'"
                                                                                     
@@ -36,6 +36,7 @@ exports.edit = function signup(req, res){
     }
     else{
         res.status(200);
+        
        // res.json(aId);
     }
             
@@ -61,7 +62,7 @@ exports.edit = function signup(req, res){
       No=post.addr1;
       Street=post.addr2;
       City=post.addr3;
-      ContactNo=post.addr3;
+      ContactNo=post.phone;
       id=post.id;
       Password=post.pw
 
@@ -105,7 +106,7 @@ exports.edit = function signup(req, res){
       No=post.addr1;
       Street=post.addr2;
       City=post.addr3;
-      ContactNo=post.addr3;
+      ContactNo=post.phone;
       id=post.id;
       Password=post.pw
 

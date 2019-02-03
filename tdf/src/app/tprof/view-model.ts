@@ -1,6 +1,6 @@
 export interface admin {
 
-    tId:Number,
+    tId:String,
     
     fName: string,
     mName: string,
